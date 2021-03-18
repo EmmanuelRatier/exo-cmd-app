@@ -1,15 +1,29 @@
 const readlineSync = require('readline-sync')
 
-const answer1 = readlineSync.question('Question 1: Le C++ est un:  1: langage  2: compilateur  ')
-const answer2 = readlineSync.question('Question 2: Typescript est une evolution de JS ?:  1: Vrai  2: Faux  ')
+let answer1 = ['langage', 'compilateur']
+let answerTrueFalse = ['vrai', 'faux']
 
-if (answer1 === 1) {
-  console.log('good')
-} else {
-  console.log('bad')
+const question1 = readlineSync.keyInSelect(answer1, 'Question 1: Le C++ est un: ')
+const question2 = readlineSync.keyInSelect(answerTrueFalse, 'Question 2: Typescript est une evolution de JS ?: ')
+const question3 = readlineSync.keyInSelect(answerTrueFalse, 'Question 3: Lire les cours avant de faire les exercices est inutile: ')
+const question4 = readlineSync.keyInSelect(answerTrueFalse, 'Question 4: react.js a été developpé par Google: ')
+const question5 = readlineSync.keyInSelect(answerTrueFalse, 'Question 5: Ethereum est une blockchain publique: ')
+let note = 0;
+
+if (answer1[question1] === answer1[0]) {
+  note++
 }
-if (answer2 === 1) {
-  console.log('good')
-} else {
-  console.log('bad')
+if (answerTrueFalse[question2] === answerTrueFalse[0]) {
+  note++
 }
+if (answerTrueFalse[question3] === answerTrueFalse[1]) {
+  note++
+}
+if (answerTrueFalse[question4] === answerTrueFalse[1]) {
+  note++
+}
+if (answerTrueFalse[question5] === answerTrueFalse[0]) {
+  note++
+}
+
+console.log(`quiz terminé vous avez ${note} sur 5 de bonne réponse`)
